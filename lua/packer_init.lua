@@ -1,3 +1,4 @@
+
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
@@ -21,4 +22,24 @@ return require('packer').startup(function()
 	  'nvim-treesitter/nvim-treesitter',
 	  run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
+  -- Language server
+  use 'neovim/nvim-lspconfig'
+  -- Auto completion
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'L3MON4D3/LuaSnip',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
+      'saadparwaiz1/cmp_luasnip',
+    },
+  }
+  -- Auto pairs (), {}, []
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+  -- Indent line
+  use "lukas-reineke/indent-blankline.nvim"
 end)

@@ -1,39 +1,38 @@
-require'plugins'
--- OR setup with some options
-require("nvim-tree").setup({
-  sort_by = "case_sensitive",
-  view = {
-    adaptive_size = true,
-    side = "left",
-    preserve_window_proportions = true,
-    mappings = {
-      list = {
-        { key = "u", action = "dir_up" },
-      },
-    },
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
-})
--- tokyonight option settings
--- Example config in Lua
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+-- Import Lua modules
+require'plugins/indent-blankline'
+require'plugins/nvim-autopairs'
+require'plugins/nvim-cmp'
+require'plugins/nvim-lspconfig'
+require'plugins/nvim-tree'
+require'plugins/nvim-treesitter'
+require'plugins/tokyonight'
 
--- Change the "hint" color to the "orange" color, and make the "error" color bright red
-vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+-- Select Interpreter
+vim.g.python3_host_prog="/home/akira/akira/poteka-pipeline-pytorch/.venv/bin/python"
 
--- Load the colorscheme
-vim.cmd[[colorscheme tokyonight]]
-
--- Syntax highlighting
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-  }
-}
+-- Vim settings
+-- length of an actual \t character:
+vim.opt.tabstop=4
+-- length to use when editing text (eg. TAB and BS keys)
+-- (0 for ‘tabstop’, -1 for ‘shiftwidth’):
+vim.opt.softtabstop=-1
+-- length to use when shifting text (eg. <<, >> and == commands)
+-- (0 for ‘tabstop’):
+vim.opt.shiftwidth=0
+-- round indentation to multiples of 'shiftwidth' when shifting text
+-- (so that it behaves like Ctrl-D / Ctrl-T):
+vim.opt.shiftround=true
+-- if set, only insert spaces; otherwise insert \t and complete with spaces:
+vim.opt.expandtab=true
+-- reproduce the indentation of the previous line:
+vim.opt.autoindent=true
+-- keep indentation produced by 'autoindent' if leaving the line blank:
+-- set cpoptions+=I
+-- try to be smart (increase the indenting level after ‘{’,
+-- decrease it after ‘}’, and so on):
+-- "set smartindent
+-- a stricter alternative which works better for the C language:
+-- set cindent
+-- use language‐specific plugins for indenting (better):
+vim.opt.number = true
+vim.cmd("filetype plugin indent on")
