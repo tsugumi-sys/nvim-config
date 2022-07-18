@@ -1,4 +1,5 @@
 -- Import Lua modules
+require'packer_init'
 require'plugins/indent-blankline'
 require'plugins/nvim-autopairs'
 require'plugins/nvim-cmp'
