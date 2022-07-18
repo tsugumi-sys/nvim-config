@@ -7,7 +7,6 @@ require'plugins/nvim-lspconfig'
 require'plugins/nvim-tree'
 require'plugins/nvim-treesitter'
 require'plugins/tokyonight'
-
 -- Select Interpreter
 vim.g.python3_host_prog="/home/akira/akira/poteka-pipeline-pytorch/.venv/bin/python"
 
