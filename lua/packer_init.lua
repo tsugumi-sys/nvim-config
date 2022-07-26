@@ -41,4 +41,7 @@ return require('packer').startup(function()
   }
   -- Indent line
   use "lukas-reineke/indent-blankline.nvim"
+  use {
+      "akinsho/toggleterm.nvim", tag = 'v2.*',
+  }
 end)

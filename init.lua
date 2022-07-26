@@ -7,6 +7,7 @@ require'plugins/nvim-lspconfig'
 require'plugins/nvim-tree'
 require'plugins/nvim-treesitter'
 require'plugins/tokyonight'
+require'plugins/toggle-term'
 -- Select Interpreter
 vim.g.python3_host_prog="/home/akira/akira/poteka-pipeline-pytorch/.venv/bin/python"
 
@@ -35,4 +36,5 @@ vim.opt.autoindent=true
 -- set cindent
 -- use language‐specific plugins for indenting (better):
 vim.opt.number = true
+vim.opt.hidden = true
 vim.cmd("filetype plugin indent on")
