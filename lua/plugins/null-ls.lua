@@ -1,11 +1,12 @@
 local status, null_ls = pcall(require, "null-ls")
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+--local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 if (not status) then return end
 
 null_ls.setup({
   debug = true,
   sources = {
     null_ls.builtins.diagnostics.fish,
+    null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.formatting.prettier.with({
       filetypes = { "markdown" }
     })

@@ -33,7 +33,9 @@ keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
+-- lsp keymaps
 -- Format
 -- Format on save for null-ls does not work...
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
 keymap.set('n', 'ff', ':lua vim.lsp.buf.formatting_sync()<CR>')
+keymap.set('n', 'ca', ':lua vim.lsp.buf.code_action()<CR>')
