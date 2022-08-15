@@ -32,5 +32,6 @@ end
 if is_win then
   require('windows')
 end
+
 -- Select Interpreter
 vim.g.python3_host_prog = "/home/akira/akira/poteka-pipeline-pytorch/.venv/bin/python"

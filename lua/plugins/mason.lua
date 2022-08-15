@@ -14,5 +14,5 @@ mason.setup({
 })
 
 lspconfig.setup {
-  ensure_installed = { "sumneko_lua", "prettier" },
+  ensure_installed = { "sumneko_lua", "prettier", "markdownlint" },
 }
