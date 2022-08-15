@@ -1,5 +1,20 @@
 # Setup
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
+
+- [Setup](#setup)
+  - [Fish Setup](#fish-setup)
+  - [Install nodejs](#install-nodejs)
+  - [Install additional dependencies](#install-additional-dependencies)
+  - [Markdown settings](#markdown-settings)
+  - [Python settings](#python-settings)
+    - [Format settings](#format-settings)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Fish Setup
 
 - Install Fish
@@ -78,3 +93,22 @@ npm install -g tree-sitter-cli
 3. Activate python virtual env before open neovim.
 4. Modify `vim.g.python3_host_prog={YOUR_PYTHON_ENV_PATH}` in `init.lua`.
 5. Install `pynvim` into your python environment.
+
+### Format settings
+
+- add below line to `/lua/plugins/null-ls.lua`
+
+```lua
+null_ls.setup({
+    -- some settings
+    null_ls.builtins.formatting.black
+    null_ls.builtins.diagnostics.flake8
+  })
+```
+
+- Install flake8 and black
+  If your virtual environment contains these packages, just
+  **activate your virtual environment** before open neovim.
+  Else, install via `Mason`
+
+**_NOTE_:\_** You can configure these packages using file (e.g. .flake8, pyproject.toml).
