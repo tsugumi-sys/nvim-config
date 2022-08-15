@@ -23,6 +23,12 @@ sudo vim /etc/shells
 chsh -s $(which fish)
 ```
 
+If you using `conda`, add the following line into `.config/fish/config.fish`
+
+```bash
+source (conda info --root)/etc/fish/conf.d/conda.fish
+```
+
 [Fish HomePage](https://fishshell.com/)
 
 - Install oh-my-fish
