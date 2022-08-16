@@ -112,3 +112,36 @@ null_ls.setup({
   Else, install via `Mason`
 
 **_NOTE_:\_** You can configure these packages using file (e.g. .flake8, pyproject.toml).
+
+## Terraform settings
+
+- add the following line to `/lua/plugins/null-ls.lua`
+
+```lua
+null_ls.setup({
+    -- some settings
+    null_ls.builtins.formatting.terraform_fmt
+  })
+```
+
+## Github settings
+
+- add the following line to `/lua/plugins/null-ls.lua`
+
+```lua
+null_ls.setup({
+    -- some settings
+    null_ls.builtins.formatting.diagnostics.actionlint
+  })
+```
+
+## Yaml settings
+
+- add the following line to `/lua/plugins/null-ls.lua`
+
+```lua
+null_ls.setup({
+    -- some settings
+    null_ls.builtins.diagnostics.yamllint
+  })
+```
