@@ -38,9 +38,17 @@ sudo vim /etc/shells
 chsh -s $(which fish)
 ```
 
+- add paths
+  You should add some module paths (like brew, nvim) like below in `.config/fish/config.fish`.
+
+```config
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/bin/nvim
+```
+
 If you using `conda`, add the following line into `.config/fish/config.fish`
 
-```bash
+```config
 source (conda info --root)/etc/fish/conf.d/conda.fish
 ```
 
