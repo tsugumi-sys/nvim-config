@@ -24,7 +24,7 @@ git clone https://github.com/fish-shell/fish-shell.git -b <current_stable_versio
 ```
 
 ```bash
-cd fish && sudo make install
+cd fish-shell && sudo make install
 ```
 
 - Set fish as default terminal
