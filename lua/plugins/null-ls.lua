@@ -7,7 +7,7 @@ null_ls.setup({
   sources = {
     null_ls.builtins.diagnostics.fish,
     null_ls.builtins.formatting.prettier.with({
-      filetypes = { "markdown", "yaml" }
+      filetypes = { "markdown", "yaml", "json" }
     }),
     -- Markdown
     null_ls.builtins.diagnostics.markdownlint,
