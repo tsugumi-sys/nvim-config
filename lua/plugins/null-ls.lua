@@ -6,12 +6,20 @@ null_ls.setup({
   debug = true,
   sources = {
     null_ls.builtins.diagnostics.fish,
-    null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.formatting.prettier.with({
-      filetypes = { "markdown" }
+      filetypes = { "markdown", "yaml", "json" }
     }),
+    -- Markdown
+    null_ls.builtins.diagnostics.markdownlint,
+    -- Python
     null_ls.builtins.formatting.black,
-    null_ls.builtins.diagnostics.flake8
+    null_ls.builtins.diagnostics.flake8,
+    -- Terraform
+    null_ls.builtins.formatting.terraform_fmt,
+    -- Github action
+    null_ls.builtins.diagnostics.actionlint,
+    -- Yaml
+    null_ls.builtins.diagnostics.yamllint
   },
   --on_attach = function(client, bufnr)
   --  if client.supports_method("textDocument/formatting") then

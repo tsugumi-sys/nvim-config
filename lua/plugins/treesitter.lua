@@ -8,19 +8,17 @@ ts.setup {
   },
   indent = {
     enable = true,
-    disable = {},
+    -- Python indent by nvim-treesitter does not work in python (e.g. autoindent fail after colon.)
+    disable = { "python" },
   },
   ensure_installed = {
     "tsx",
     "toml",
     "fish",
-    "php",
     "json",
     "yaml",
-    "swift",
-    "css",
-    "html",
-    "lua"
+    "lua",
+    "python"
   },
   autotag = {
     enable = true,

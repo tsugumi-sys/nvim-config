@@ -24,7 +24,7 @@ git clone https://github.com/fish-shell/fish-shell.git -b <current_stable_versio
 ```
 
 ```bash
-cd fish && sudo make install
+cd fish-shell && sudo make install
 ```
 
 - Set fish as default terminal
@@ -38,13 +38,22 @@ sudo vim /etc/shells
 chsh -s $(which fish)
 ```
 
-If you using `conda`, run the folowing command in your default terminal. 
+- add paths
+  You should add some module paths (like brew, nvim) like below in `.config/fish/config.fish`.
+
+```config
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/bin/nvim
+```
+
+If you using `conda`, run the folowing command in your default terminal.
 
 ```bash
 conda init fish
+
 ```
 
-This command will modify `.config/fish/config.fish`
+This command will modify `.config/fish/config.fish` automatically.
 
 [Fish HomePage](https://fishshell.com/)
 
@@ -114,3 +123,36 @@ null_ls.setup({
   Else, install via `Mason`
 
 **_NOTE_:\_** You can configure these packages using file (e.g. .flake8, pyproject.toml).
+
+## Terraform settings
+
+- add the following line to `/lua/plugins/null-ls.lua`
+
+```lua
+null_ls.setup({
+    -- some settings
+    null_ls.builtins.formatting.terraform_fmt
+  })
+```
+
+## Github settings
+
+- add the following line to `/lua/plugins/null-ls.lua`
+
+```lua
+null_ls.setup({
+    -- some settings
+    null_ls.builtins.formatting.diagnostics.actionlint
+  })
+```
+
+## Yaml settings
+
+- add the following line to `/lua/plugins/null-ls.lua`
+
+```lua
+null_ls.setup({
+    -- some settings
+    null_ls.builtins.diagnostics.yamllint
+  })
+```
