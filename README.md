@@ -38,11 +38,13 @@ sudo vim /etc/shells
 chsh -s $(which fish)
 ```
 
-If you using `conda`, add the following line into `.config/fish/config.fish`
+If you using `conda`, run the folowing command in your default terminal. 
 
 ```bash
-source (conda info --root)/etc/fish/conf.d/conda.fish
+conda init fish
 ```
+
+This command will modify `.config/fish/config.fish`
 
 [Fish HomePage](https://fishshell.com/)
 
