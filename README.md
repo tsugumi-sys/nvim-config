@@ -97,6 +97,10 @@ npm install -g tree-sitter-cli
 :MasonInstall markdownlint
 ```
 
+## Install viu
+
+- [install viu](https://github.com/atanunq/viu) for image preview in fzflua plugin.
+
 ## Python settings
 
 1. Run `npm i -g pyright` to install pyright for nvim-lspconfig.

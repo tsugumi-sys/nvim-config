@@ -4,6 +4,7 @@ require 'base'
 require 'highlights'
 require 'keymaps'
 -- Import plugins settings
+require 'plugins/fzf-lua'
 require 'plugins/git'
 require 'plugins/gitsigns'
 require 'plugins/indent-blankline'

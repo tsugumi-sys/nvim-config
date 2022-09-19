@@ -60,5 +60,11 @@ packer.startup(function(use)
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },
   })
-  -- Markdown Preview
+  -- Image viewer
+  use { 'ibhagwan/fzf-lua',
+    -- optional for icon support
+    requires = { 'kyazdani42/nvim-web-devicons' }
+  }
+  use { 'junegunn/fzf', run = './install --bin', }
+  -- Markdown markdown-preview
 end)
