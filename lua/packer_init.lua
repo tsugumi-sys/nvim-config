@@ -56,9 +56,13 @@ packer.startup(function(use)
   }
   use 'lewis6991/gitsigns.nvim' -- Super fast git decorations implemented purely in lua/teal.
   use 'dinhhuy258/git.nvim' -- For git blame & browse
+  --use({
+  --  "iamcco/markdown-preview.nvim",
+  --  run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },
+  --})
   use({
     "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },
+    run = function() vim.fn["mkdp#util#install"]() end,
   })
   -- Image viewer
   use { 'ibhagwan/fzf-lua',
