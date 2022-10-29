@@ -39,3 +39,6 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
 keymap.set('n', 'ff', ':lua vim.lsp.buf.formatting_sync()<CR>')
 keymap.set('n', 'ca', ':lua vim.lsp.buf.code_action()<CR>')
+
+-- fzflua keymaps
+keymap.set('n', 'fz', ":lua require('fzf-lua').files()<CR>")
